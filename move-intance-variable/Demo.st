@@ -66,6 +66,10 @@ contactNumber
 firstName
 	^firstName! !
 
+!BankCustomer methodsFor: 'accessing' stamp: 'mc 9/28/2024 01:41:07'!
+fullContactInfo
+	^'phone: ', self contactNumber , ' email: ', email ! !
+
 !BankCustomer methodsFor: 'accessing' stamp: 'mc 7/29/2024 02:11:36'!
 hasDni: aDni
 	^dni  = aDni ! !
@@ -77,6 +81,10 @@ hasLastName: aLastName
 !BankCustomer methodsFor: 'accessing' stamp: 'mc 8/16/2024 01:45:33'!
 livesOnCountry: aCountryName 
 	^country = aCountryName! !
+
+!BankCustomer methodsFor: 'accessing' stamp: 'mc 9/28/2024 01:51:35'!
+residentialContactInfo
+	^self fullContactInfo, ' ', self homeAdress ! !
 
 
 !BankCustomer methodsFor: 'as yet unclassified' stamp: 'mc 9/3/2024 00:57:47'!
@@ -135,6 +143,14 @@ findByLastName: aLastName
 !BankSystem methodsFor: 'accessing' stamp: 'mc 9/27/2024 02:47:58'!
 findContactNumberByDNI: aDni 
 	^(self findByDNI: aDni) contactNumber! !
+
+!BankSystem methodsFor: 'accessing' stamp: 'mc 9/28/2024 01:40:20'!
+findFullContactInfoByDNI: aDni 
+	^(self findByDNI: aDni) fullContactInfo! !
+
+!BankSystem methodsFor: 'accessing' stamp: 'mc 9/28/2024 01:49:33'!
+findResidentialContactInfoByDNI: aDni 
+	^(self findByDNI: aDni) residentialContactInfo! !
 
 
 !BankSystem methodsFor: 'initialization' stamp: 'mc 7/29/2024 02:04:43'!
@@ -282,6 +298,30 @@ test06CanAskBankCustomerContactNumberByDNI
 	result := aBankSystem findContactNumberByDNI: '28908735'.
 	
 	self assert: result equals: '011 77778888'.
+	! !
+
+!BankCustomerTest methodsFor: 'as yet unclassified' stamp: 'mc 9/28/2024 01:39:26'!
+test07CanAskBankCustomerFullContactInfoByDNI
+	| aBankSystem result pedro |
+	aBankSystem := BankSystem new.
+	pedro := self pedroFernandezCustomer.
+	aBankSystem addCustomer: pedro.
+	
+	result := aBankSystem findFullContactInfoByDNI: '28908735'.
+	
+	self assert: result equals: 'phone: 011 77778888 email: pedro@pedro.com'.
+	! !
+
+!BankCustomerTest methodsFor: 'as yet unclassified' stamp: 'mc 9/28/2024 01:51:52'!
+test08CanAskBankCustomerResidentialContactInfoByDNI
+	| aBankSystem result pedro |
+	aBankSystem := BankSystem new.
+	pedro := self pedroFernandezCustomer.
+	aBankSystem addCustomer: pedro.
+	
+	result := aBankSystem findResidentialContactInfoByDNI: '28908735'.
+	
+	self assert: result equals: 'phone: 011 77778888 email: pedro@pedro.com home address: Laprida 123 Florida Argentina'.
 	! !
 !classDefinition: #ClassA category: #'Demo-move02'!
 Object subclass: #ClassA
