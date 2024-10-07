@@ -440,9 +440,12 @@ Object subclass: #ClassC
 	poolDictionaries: ''
 	category: 'Demo-move-method02'!
 
-!ClassC methodsFor: 'as yet unclassified' stamp: 'mc 9/19/2024 01:19:36'!
+!ClassC methodsFor: 'as yet unclassified' stamp: 'mc 10/7/2024 01:43:23'!
 initialize
-	objD := ClassD new.! !
+	objD := ClassD new.
+	iv1 := 1.
+	iv2 := 2.
+	iv3 := 3.! !
 
 !ClassC methodsFor: 'as yet unclassified' stamp: 'mc 9/19/2024 01:02:02'!
 iv1
