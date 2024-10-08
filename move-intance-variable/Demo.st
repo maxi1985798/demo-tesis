@@ -38,12 +38,12 @@ street: aStreetName streetNumber: streetNumber city: aCityName postalCode: aPost
 
 !classDefinition: #BankCustomer category: #'Demo-move01-banksystem'!
 Object subclass: #BankCustomer
-	instanceVariableNames: 'firstName lastName cvu ccNumber phone areaCode email country dni livesAt address'
+	instanceVariableNames: 'firstName lastName cvu ccNumber phone areaCode email country dni livesAt'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'Demo-move01-banksystem'!
 
-!BankCustomer methodsFor: 'initialization' stamp: 'mc 9/27/2024 02:59:52'!
+!BankCustomer methodsFor: 'initialization' stamp: 'mc 10/8/2024 01:27:31'!
 initializeFirstName: aFirstName lastName: aLastName dni: aDNI cvu: aCvu ccNumber: accNumber areaCode: anAreaCode phone: aPhone email: anEmail country: aCountry livesAt: anAddress 
 	livesAt := anAddress .
 	firstName := aFirstName.
@@ -54,8 +54,7 @@ initializeFirstName: aFirstName lastName: aLastName dni: aDNI cvu: aCvu ccNumber
 	areaCode := anAreaCode.
 	phone := aPhone.
 	email := anEmail.
-	country := aCountry.
-	address := anAddress.! !
+	country := aCountry.! !
 
 
 !BankCustomer methodsFor: 'accessing' stamp: 'mc 9/27/2024 02:48:43'!
