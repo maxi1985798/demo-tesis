@@ -1,0 +1,24 @@
+"---move instance variable -----------"
+
+(MoveInstanceVariableRefactoring
+named: 'instVarB'
+from: ClassA
+to: ClassB
+accessingThrough: 'objB'
+usingGetter: #instVarB2
+usingSetter: #instVarB2:) apply.
+
+ClassA new instVarB_plus_one
+
+"-------------------------------------"
+
+Car new startWithDefaultMotors
+
+"---move method ----------------------"
+
+Cat new speak.
+
+"-------------------------------------"
+
+ClassC new methodUseIv1Iv2Iv3
+

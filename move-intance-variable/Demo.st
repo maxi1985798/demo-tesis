@@ -38,12 +38,12 @@ street: aStreetName streetNumber: streetNumber city: aCityName postalCode: aPost
 
 !classDefinition: #BankCustomer category: #'Demo-move01-banksystem'!
 Object subclass: #BankCustomer
-	instanceVariableNames: 'firstName lastName cvu ccNumber phone areaCode email country dni livesAt'
+	instanceVariableNames: 'firstName lastName cvu ccNumber phone areaCode email country dni livesAt address'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'Demo-move01-banksystem'!
 
-!BankCustomer methodsFor: 'initialization' stamp: 'mc 10/8/2024 01:27:31'!
+!BankCustomer methodsFor: 'initialization' stamp: 'mc 9/27/2024 02:59:52'!
 initializeFirstName: aFirstName lastName: aLastName dni: aDNI cvu: aCvu ccNumber: accNumber areaCode: anAreaCode phone: aPhone email: anEmail country: aCountry livesAt: anAddress 
 	livesAt := anAddress .
 	firstName := aFirstName.
@@ -54,7 +54,8 @@ initializeFirstName: aFirstName lastName: aLastName dni: aDNI cvu: aCvu ccNumber
 	areaCode := anAreaCode.
 	phone := aPhone.
 	email := anEmail.
-	country := aCountry.! !
+	country := aCountry.
+	address := anAddress.! !
 
 
 !BankCustomer methodsFor: 'accessing' stamp: 'mc 9/27/2024 02:48:43'!
@@ -412,18 +413,6 @@ Animal subclass: #Cat
 !Cat methodsFor: 'as yet unclassified' stamp: 'mc 9/19/2024 00:31:52'!
 speak
 	^super speak, ' meow'! !
-
-
-!classDefinition: #Dog category: #'Demo-move-method01'!
-Animal subclass: #Dog
-	instanceVariableNames: ''
-	classVariableNames: ''
-	poolDictionaries: ''
-	category: 'Demo-move-method01'!
-
-!Dog methodsFor: 'as yet unclassified' stamp: 'mc 9/18/2024 01:46:23'!
-speak
-	^super speak, ' woof'! !
 
 
 !classDefinition: #VocalCord category: #'Demo-move-method01'!
