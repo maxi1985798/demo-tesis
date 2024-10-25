@@ -65,9 +65,9 @@ contactNumber
 firstName
 	^firstName! !
 
-!BankCustomer methodsFor: 'accessing' stamp: 'mc 9/28/2024 01:41:07'!
+!BankCustomer methodsFor: 'accessing' stamp: 'mc 10/24/2024 02:21:49'!
 fullContactInfo
-	^'phone: ', self contactNumber , ' email: ', email ! !
+	^'phone: ', areaCode, ' ', phone, ' email: ', email ! !
 
 !BankCustomer methodsFor: 'accessing' stamp: 'mc 7/29/2024 02:11:36'!
 hasDni: aDni
