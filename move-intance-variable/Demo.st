@@ -457,3 +457,27 @@ Object subclass: #ClassD
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'Demo-move-method02'!
+!classDefinition: #FiboUtils category: #'Demo-move-method-recursive'!
+Object subclass: #FiboUtils
+	instanceVariableNames: 'fiboUtils'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Demo-move-method-recursive'!
+
+
+!classDefinition: #Fibonacci category: #'Demo-move-method-recursive'!
+Object subclass: #Fibonacci
+	instanceVariableNames: 'fiboUtils'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Demo-move-method-recursive'!
+
+!Fibonacci methodsFor: 'as yet unclassified' stamp: 'mc 10/30/2024 00:51:25'!
+calculate: anInt
+	anInt = 0 ifTrue: [^0].
+	anInt = 1 ifTrue: [^1].
+	^(self calculate: anInt -1) + (self calculate: anInt -2)! !
+
+!Fibonacci methodsFor: 'as yet unclassified' stamp: 'mc 10/30/2024 00:52:05'!
+initialize
+	fiboUtils := FiboUtils new.! !
